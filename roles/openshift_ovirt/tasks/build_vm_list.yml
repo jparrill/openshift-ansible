@@ -25,6 +25,7 @@
       'nic_on_boot': {{ item["nic_mode"][item["name"] + iter | string ]["nic_on_boot"] | default(true) | bool }},
       'nic_name': '{{ item["nic_mode"][item["name"] + iter | string ]["nic_name"] | default("eth0") }}',
       'dns_servers': '{{ item["nic_mode"][item["name"] + iter | string ]["dns_servers"] }}',
+      'dns_search': '{{ item["nic_mode"][item["name"] + iter | string ]["dns_search"] }}',
       {% endif -%}
       'authorized_ssh_keys': '{{ openshift_ovirt_ssh_key }}'
       },
